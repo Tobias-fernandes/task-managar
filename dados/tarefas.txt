@@ -1,0 +1,2 @@
+1;Jantar;Arroz com rapadura;19/07/2025 14:30:51;Em Progresso;;Media
+2;Ir la em vo;tomar cafe;19/07/2025 14:55:58;A Fazer;;Alta
