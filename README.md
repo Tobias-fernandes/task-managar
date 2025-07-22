@@ -20,41 +20,27 @@ javac -version
 
 #### **Passo 1: Navegue até o diretório do projeto**
 ```bash
-# Abra o terminal/prompt e navegue até a pasta do projeto
-cd "C:\caminho\para\TarefasProjetosPessoais\src"
+# Abra o terminal/prompt e navegue até a pasta src do projeto
+cd "C:\Users\Lailson\Desktop\WALBER CARECA\task-managar\src"
 ```
 
-#### **Passo 2: Compile todos os arquivos Java**
+#### **Passo 2: Compile o projeto**
 ```bash
-# Windows (PowerShell/CMD)
-javac -cp . java\util\*.java java\view\*.java java\model\*.java java\dao\*.java *.java
-
-# Linux/macOS
-javac -cp . java/util/*.java java/view/*.java java/model/*.java java/dao/*.java *.java
+# Compilação simples (todos os arquivos são compilados automaticamente)
+javac SistemaMain.java
 ```
 
 #### **Passo 3: Execute o sistema**
 ```bash
-# Windows
-java -cp ".;java" SistemaMain
-
-# Linux/macOS  
-java -cp ".:java" SistemaMain
-```
-# Windows (PowerShell/CMD)
-javac -cp . java\util\*.java java\view\*.java java\model\*.java java\dao\*.java *.java
-
-# Linux/macOS
-javac -cp . java/util/*.java java/view/*.java java/model/*.java java/dao/*.java *.java
+# Execute o sistema
+java SistemaMain
 ```
 
-**Passo 3:** Execute o sistema
+### 🚀 **Execução Rápida (Alternativa)**
 ```bash
-# Windows
-java -cp ".;java" SistemaMain
-
-# Linux/macOS  
-java -cp ".:java" SistemaMain
+# Navegue até a pasta do projeto e execute tudo de uma vez
+cd "C:\Users\Lailson\Desktop\WALBER CARECA\task-managar\src"
+javac SistemaMain.java && java SistemaMain
 ```
 
 ### 🎮 Primeiro Uso do Sistema
@@ -69,30 +55,55 @@ java -cp ".:java" SistemaMain
 **Erro: `javac: command not found`**
 - Solução: Instale o Java JDK e configure a variável de ambiente PATH
 
-**Erro: `Error: Could not find or load main class`**
-- Solução: Certifique-se de estar no diretório `src` e usar o classpath correto
+**Erro: `Error: Could not find or load main class SistemaMain`**
+- Solução: Certifique-se de estar no diretório `src` ao executar o comando
 
 **Erro: Arquivos não encontrados**
 - Solução: O sistema criará automaticamente os arquivos de dados na primeira execução
 
+**Erro: `package does not exist`**
+- Solução: Execute `javac SistemaMain.java` a partir do diretório `src`
+
+### 👥 **Usuários Pré-cadastrados para Teste**
+
+O sistema vem com usuários padrão para facilitar os testes:
+
+- **Admin**
+  - Email: `admin@sistema.com`
+  - Senha: `123`
+
+
 ## 📁 Estrutura do Projeto
 
 ```
-TarefasProjetosPessoais/
-├── README.md              # Documentação do projeto
-├── src/                   # Código fonte principal
-│   ├── SistemaMain.java   # Classe principal do sistema
-│   ├── dados/             # Arquivos TXT para persistência de dados
-│   │   ├── usuarios.txt   # Dados dos usuários
-│   │   ├── projetos.txt   # Informações dos projetos
-│   │   ├── tarefas.txt    # Detalhes das tarefas
-│   │   ├── categorias.txt # Lista de categorias
-│   │   └── tarefa_categoria.txt # Relacionamentos
-│   └── java/              # Pacotes organizados
-│       ├── model/         # Classes do modelo (Usuario, Projeto, Tarefa, etc.)
-│       ├── dao/           # Classes de acesso a dados
-│       ├── view/          # Interfaces de usuário (menus)
-│       └── util/          # Utilitários (manipulação de arquivos, tela)
+task-managar/
+├── README.md                # Documentação do projeto
+├── dados/                   # Arquivos TXT para persistência de dados
+│   ├── usuarios.txt         # Dados dos usuários
+│   ├── projetos.txt         # Informações dos projetos
+│   ├── tarefas.txt          # Detalhes das tarefas
+│   ├── categorias.txt       # Lista de categorias
+│   └── tarefa_categoria.txt # Relacionamentos
+└── src/                     # Código fonte principal
+    ├── SistemaMain.java     # Classe principal do sistema
+    ├── dao/                 # Classes de acesso a dados
+    │   ├── CategoriaDAO.java
+    │   ├── GerenciadorDados.java
+    │   ├── ProjetoDAO.java
+    │   ├── TarefaDAO.java
+    │   └── UsuarioDAO.java
+    ├── model/               # Classes do modelo de dados
+    │   ├── Categoria.java
+    │   ├── ItemGerenciavel.java
+    │   ├── Projeto.java
+    │   ├── Tarefa.java
+    │   └── Usuario.java
+    ├── util/                # Classes utilitárias
+    │   ├── ArquivoUtil.java
+    │   └── TelaUtil.java
+    └── view/                # Interfaces de usuário (menus)
+        ├── MenuAutenticacao.java
+        └── MenuUsuario.java
 ```
 
 ## 🏗️ Funcionalidades do Sistema
@@ -166,7 +177,7 @@ TarefasProjetosPessoais/
 O sistema utiliza arquivos de texto simples (TXT) para armazenamento:
 - **Formato:** Campos separados por ponto e vírgula (;)
 - **Codificação:** UTF-8 para suporte a caracteres especiais
-- **Localização:** Diretório `src/dados/`
+- **Localização:** Diretório `dados/` na raiz do projeto
 - **Backup automático:** Dados salvos a cada operação
 
 ## 🚀 Tecnologias Utilizadas
@@ -178,6 +189,31 @@ O sistema utiliza arquivos de texto simples (TXT) para armazenamento:
 - **Arquitetura:** MVC com DAO Pattern
 - **Funcionalidades:** Limpeza de tela, navegação intuitiva
 
-## 📄 Licença
+## � **Exemplo Prático de Uso**
+
+### **Executando o Sistema:**
+```bash
+# 1. Navegue até a pasta src
+cd "C:\Users\Lailson\Desktop\WALBER CARECA\task-managar\src"
+
+# 2. Compile
+javac SistemaMain.java
+
+# 3. Execute
+java SistemaMain
+```
+
+### **Primeiro Login:**
+1. Escolha "1. Fazer Login"
+2. Email: `fff@gmail.com`
+3. Senha: `1010`
+
+### **Testando Funcionalidades:**
+1. **Criar uma tarefa:** Menu 1 → Opção 1
+2. **Listar tarefas:** Menu 1 → Opção 2
+3. **Criar um projeto:** Menu 2 → Opção 1
+4. **Ver estatísticas:** Menu 4 → Opção 1
+
+## �📄 Licença
 
 Este projeto foi desenvolvido para fins educacionais e demonstração de conceitos de POO em Java.

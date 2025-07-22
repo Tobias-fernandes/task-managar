@@ -1,2 +1,4 @@
 1;Urgente
 2;Desenvolvimento
+3;meme
+4;otima
