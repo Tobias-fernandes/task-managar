@@ -1,9 +1,8 @@
 package dao;
 
-import model.*;
-import util.ArquivoUtil;
 import java.util.ArrayList;
 import java.util.List;
+import model.*;
 
 public class GerenciadorDados {
     private List<Usuario> usuarios;
@@ -126,6 +125,69 @@ public class GerenciadorDados {
     
     public int obterProximoIdTarefa() {
         return TarefaDAO.obterProximoId(this.tarefas);
+    }
+    
+    // Métodos de busca e operações específicas
+    public Usuario buscarUsuarioPorEmail(String email) {
+        return usuarios.stream()
+            .filter(u -> u.getEmail().equals(email))
+            .findFirst()
+            .orElse(null);
+    }
+    
+    public Projeto buscarProjetoPorId(int id) {
+        return projetos.stream()
+            .filter(p -> p.getId() == id)
+            .findFirst()
+            .orElse(null);
+    }
+    
+    public Categoria buscarCategoriaPorId(int id) {
+        return categorias.stream()
+            .filter(c -> c.getId() == id)
+            .findFirst()
+            .orElse(null);
+    }
+    
+    public Tarefa buscarTarefaPorId(int id) {
+        return tarefas.stream()
+            .filter(t -> t.getId() == id)
+            .findFirst()
+            .orElse(null);
+    }
+    
+    // Métodos para listar por usuário (implementação simplificada)
+    public List<Projeto> listarProjetosPorUsuario(int usuarioId) {
+        // Por enquanto, retorna todos os projetos
+        return new ArrayList<>(projetos);
+    }
+    
+    public List<Tarefa> listarTarefasPorUsuario(int usuarioId) {
+        // Por enquanto, retorna todas as tarefas
+        return new ArrayList<>(tarefas);
+    }
+    
+    public List<Tarefa> listarTarefasPorProjeto(int projetoId) {
+        // Por enquanto, retorna uma lista vazia até implementarmos a relação
+        return new ArrayList<>();
+    }
+    
+    public List<Tarefa> listarTarefasPorCategoria(int categoriaId) {
+        // Por enquanto, retorna todas as tarefas até implementarmos a relação tarefa-categoria
+        return new ArrayList<>(tarefas);
+    }
+    
+    // Métodos para remover itens
+    public boolean removerProjeto(int id) {
+        return projetos.removeIf(p -> p.getId() == id);
+    }
+    
+    public boolean removerCategoria(int id) {
+        return categorias.removeIf(c -> c.getId() == id);
+    }
+    
+    public boolean removerTarefa(int id) {
+        return tarefas.removeIf(t -> t.getId() == id);
     }
     
     // Método para criar dados de exemplo
