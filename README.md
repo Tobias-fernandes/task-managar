@@ -39,7 +39,7 @@ java SistemaMain
 ### 🚀 **Execução Rápida (Alternativa)**
 ```bash
 # Navegue até a pasta do projeto e execute tudo de uma vez
-cd "C:\Users\Lailson\Desktop\WALBER CARECA\task-managar\src"
+cd "C:\Caminho\task-managar\src"
 javac SistemaMain.java && java SistemaMain
 ```
 
@@ -194,7 +194,7 @@ O sistema utiliza arquivos de texto simples (TXT) para armazenamento:
 ### **Executando o Sistema:**
 ```bash
 # 1. Navegue até a pasta src
-cd "C:\Users\Lailson\Desktop\WALBER CARECA\task-managar\src"
+cd "C:\caminho\task-managar\src"
 
 # 2. Compile
 javac SistemaMain.java
