@@ -21,7 +21,7 @@ javac -version
 #### **Passo 1: Navegue até o diretório do projeto**
 ```bash
 # Abra o terminal/prompt e navegue até a pasta src do projeto
-cd "C:\Users\Lailson\Desktop\WALBER CARECA\task-managar\src"
+cd "C:\caminho\src"
 ```
 
 #### **Passo 2: Compile o projeto**
